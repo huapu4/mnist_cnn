@@ -1,0 +1,51 @@
+train datasets: torch.Size([60000, 28, 28])
+test datasets: torch.Size([10000, 28, 28])
+GPU works
+CNN(
+  (layer1): Sequential(
+    (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer2): Sequential(
+    (0): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layer3): Sequential(
+    (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (layer4): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Sequential(
+    (0): Linear(in_features=2048, out_features=512, bias=True)
+    (1): ReLU(inplace)
+    (2): Linear(in_features=512, out_features=128, bias=True)
+    (3): ReLU(inplace)
+    (4): Linear(in_features=128, out_features=32, bias=True)
+    (5): ReLU(inplace)
+    (6): Linear(in_features=32, out_features=10, bias=True)
+  )
+)
+epoch 1
+train loss:0.0014,train accuracy:0.9567
+test loss:0.0004, test accuracy:0.9868
+epoch 2
+train loss:0.0004,train accuracy:0.9868
+test loss:0.0003, test accuracy:0.9913
+epoch 3
+train loss:0.0003,train accuracy:0.9915
+test loss:0.0002, test accuracy:0.9937
+epoch 4
+train loss:0.0002,train accuracy:0.9928
+test loss:0.0003, test accuracy:0.9932
+epoch 5
+train loss:0.0002,train accuracy:0.9941
+test loss:0.0002, test accuracy:0.9938
